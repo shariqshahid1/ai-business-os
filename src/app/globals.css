@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 224 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 30% 12%;
+
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 30% 18%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 243 75% 96%;
+    --accent-foreground: 243 75% 40%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 243 75% 59%;
+
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 224 32% 7%;
+    --foreground: 220 20% 96%;
+
+    --card: 224 28% 10%;
+    --card-foreground: 220 20% 96%;
+
+    --popover: 224 28% 10%;
+    --popover-foreground: 220 20% 96%;
+
+    --primary: 243 80% 67%;
+    --primary-foreground: 224 32% 7%;
+
+    --secondary: 223 25% 16%;
+    --secondary-foreground: 220 20% 96%;
+
+    --muted: 223 25% 14%;
+    --muted-foreground: 220 12% 62%;
+
+    --accent: 243 40% 20%;
+    --accent-foreground: 243 80% 80%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 55% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 224 32% 7%;
+
+    --border: 223 22% 18%;
+    --input: 223 22% 20%;
+    --ring: 243 80% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  }
+  ::selection {
+    @apply bg-primary/20;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/60 backdrop-blur-xl border border-white/10;
+  }
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-xl border border-white/10 shadow-card;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-br from-foreground via-foreground to-primary bg-clip-text text-transparent;
+  }
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
