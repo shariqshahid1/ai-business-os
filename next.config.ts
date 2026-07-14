@@ -11,7 +11,7 @@ const isProd = process.env.NODE_ENV === "production";
 const csp = isProd
   ? [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'",
+      "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'wasm-unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
