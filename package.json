@@ -63,5 +63,8 @@
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
+  },
+  "overrides": {
+    "nodemailer": "^9.0.3"
   }
 }
